@@ -28,6 +28,8 @@
     body {
         height: 2000px;
         margin: 0;
+        max-width: 100%;
+        overflow-x: hidden
     }
     div {
         -webkit-align-items: center;
@@ -72,20 +74,22 @@
 <div style="margin-top:100px; margin-left: 100px; z-index:1000; color:pink;">
 <img src="img/agreed_sample.png" style="width:200px;" />
 </div>
-<div style="margin-top:100px; margin-left: -250px; z-index:1600; color:pink;">
+<div style="margin-top:100px; margin-left: -250px; z-index:1400; color:pink;">
 <img src="img/mina.png" style="width:200px;" />
 </div>
-<div style="margin-top:100px; margin-left: 200px; z-index:2200; color:pink;">
-<img src="img/dongsi.png" style="width:200px;" />
+<div style="margin-top:100px; margin-left: 200px; z-index:1800; color:pink;">
+<img src="img/dongsi.png" style="width:300px;" />
 </div>
-<div style="margin-top:100px; z-index:2700; color:pink;">
-<img src="img/yeji.png" style="width:200px;" />
+<div style="margin-top:100px; margin-left: -200px; z-index:2200; color:pink;">
+<img src="img/yeji.png" style="width:400px;" />
 </div>
-
+<div style="margin-top:100px; z-index:2600; color:pink;">
+<img src="img/logo.png" style="width:30%;" />
+</div>
 <script>
 
     var text = document.getElementsByTagName('div')[0];
-    var aquarelle = new Aquarelle('img/smaller.jpg', 'img/mask.png', {
+    var aquarelle = new Aquarelle('img/bg_color.png', 'img/mask.png', {
         toOffset: 50
     });
 

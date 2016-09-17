@@ -65,8 +65,12 @@
         top: 50%;
     }
     .each_img{
-        margin-top: -100px;
+        margin-top: -10px;
     }
+    @media (min-width: 600px) { 
+    .each_img{
+        margin-top: -100px;
+    } }
 </style>
 
 <div style="height: 100vh;">
@@ -79,31 +83,31 @@
     <span>Scroll down</span>
 </div>
 <div class="each_img" style="margin-top:200px; margin-left: 100px;">
-<img src="img/agreed_sample.png" style="width:200px;" />
+<img src="img/agreed_sample.png" style="width:200px;" class="img_class"/>
 </div>
 <div class="each_img" style="margin-left: -250px;">
-<img src="img/mina.png" style="width:200px;" />
+<img src="img/mina.png" style="width:200px;" class="img_class" />
 </div>
 <div class="each_img" style="margin-left: 200px;">
-<img src="img/dongsi.png" style="width:300px;" />
+<img src="img/dongsi.png" style="width:300px;" class="img_class" />
 </div>
 <div class="each_img" style="margin-left: -200px;">
-<img src="img/yeji.png" style="width:400px;" />
+<img src="img/yeji.png" style="width:400px;" class="img_class" />
 </div>
 <div class="each_img" style="margin-left: 100px;">
-<img src="img/boobs.png" style="width:400px;" />
+<img src="img/boobs.png" style="width:400px;" class="img_class" />
 </div>
 <div class="each_img" style="margin-left: -250px;">
-<img src="img/jooyoung.png" style="width:200px;" />
+<img src="img/jooyoung.png" style="width:200px;" class="img_class" />
 </div>
 <div class="each_img" style="margin-left: 200px;">
-<img src="img/cham-project.png" style="width:300px;" />
+<img src="img/cham-project.png" style="width:300px;" class="img_class" />
 </div>
 <div class="each_img" style="margin-left: -200px;">
-<img src="img/glass.png" style="width:400px;" />
+<img src="img/glass.png" style="width:400px;" class="img_class" />
 </div>
 <div class="each_img">
-<img src="img/eunbi.png" style="width:30%;" />
+<img src="img/eunbi.png" style="width:200px;" class="img_class" />
 </div>
 <script>
 
@@ -146,18 +150,43 @@
 </script>
 
 <script type="text/javascript">
-    var list = document.getElementsByClassName("each_img")[i];
-    list.getElementsByClassName("child")[0].innerHTML = "Milk";
 
-
-    for (var i = 0; i < doc.childNodes.length; i++) {
-        var list = document.getElementsByClassName("each_img")[i];
-        list.style.zIndex = 1000 + (300*i);
-        if (doc.childNodes[i].className == "4") {
-          notes = doc.childNodes[i];
-          break;
-        }        
+    /*var mq = window.matchMedia( "(min-width: 720px)" );
+    if (mq.matches) {
+        for (var i = 0; i < 9; i++) {
+            var list = document.getElementsByClassName("each_img")[i];
+            var mLeftArr = ["50px","-100px","70px"];
+            list.style.marginLeft = mLeftArr[i%3]; 
+            var img_list = document.getElementsByClassName("img_class")[i];
+            img_list.style.width = "120px"; 
+        }
     }
+
+    if (document.documentElement.clientWidth < 600) {
+                
+    }*/
+
+    var mql = window.matchMedia("screen and (max-width:600px)");
+    mql.addListener(function(mql) {
+        for (var i = 0; i < 9; i++) {
+            var list = document.getElementsByClassName("each_img")[i];
+            var mLeftArr = ["50px","-100px","70px"];
+            list.style.marginLeft = mLeftArr[i%3]; 
+            var img_list = document.getElementsByClassName("img_class")[i];
+            img_list.style.width = "120px"; 
+        }
+    });
+    var mql2 = window.matchMedia("screen and (max-width:1200px)");
+    mql2.addListener(function(mql2) {
+        for (var i = 0; i < 9; i++) {
+            var list = document.getElementsByClassName("each_img")[i];
+            var mLeftArr = ["100px","-250px","200px"];
+            list.style.marginLeft = mLeftArr[i%3]; 
+            var img_list = document.getElementsByClassName("img_class")[i];
+            img_list.style.width = "200px"; 
+        }
+    });
+
 </script>
 </body>
 </html>

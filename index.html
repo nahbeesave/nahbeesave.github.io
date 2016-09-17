@@ -64,6 +64,54 @@
         position: fixed;
         top: 50%;
     }
+
+    .arrows {
+        width: 60px;
+        height: 72px;
+        position: absolute;
+        left: 50%;
+        margin-left: -30px;
+        bottom: 20px;
+    }
+
+    .arrows path {
+        stroke: #000;
+        fill: transparent;
+        stroke-width: 1px;  
+        animation: arrow 2s infinite;
+        -webkit-animation: arrow 2s infinite; 
+    }
+
+    @keyframes arrow
+    {
+    0% {opacity:0}
+    40% {opacity:1}
+    80% {opacity:0}
+    100% {opacity:0}
+    }
+
+    @-webkit-keyframes arrow /*Safari and Chrome*/
+    {
+    0% {opacity:0}
+    40% {opacity:1}
+    80% {opacity:0}
+    100% {opacity:0}
+    }
+
+    .arrows path.a1 {
+        animation-delay:-1s;
+        -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+    }
+
+    .arrows path.a2 {
+        animation-delay:-0.5s;
+        -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+    }
+
+    .arrows path.a3 {   
+        animation-delay:0s;
+        -webkit-animation-delay:0s; /* Safari 和 Chrome */
+    }
     .each_img{
         margin-top: -50px;
     }
@@ -74,12 +122,19 @@
 </style>
 
 <div style="height: 100vh;">
-    <svg viewBox="0 0 62.2 96.8">
+    <!--<svg viewBox="0 0 62.2 96.8">
         <path d="M31.1,88.8L31.1,88.8c-11.3,0-20.6-9.3-20.6-20.6V28.6C10.5,17.3,19.8,8,31.1,8h0c11.3,0,20.6,9.3,20.6,20.6v39.5C51.8,79.5,42.5,88.8,31.1,88.8z"/>
         <path d="M31.1,39.2L31.1,39.2c-1.7,0-3-1.4-3-3V23.8c0-1.7,1.4-3,3-3h0c1.7,0,3,1.4,3,3v12.3C34.2,37.8,32.8,39.2,31.1,39.2z">
             <animate attributeName="stroke-opacity" from="0" to="1" dur="1s" repeatCount="indefinite"/>
         </path>
+    </svg>-->
+
+    <svg viewBox="0 0 62.2 96.8" class="arrows">
+        <path class="a1" d="M0 0 L30 32 L60 0"></path>
+        <path class="a2" d="M0 20 L30 52 L60 20"></path>
+        <path class="a3" d="M0 40 L30 72 L60 40"></path>
     </svg>
+
     <span>Scroll down</span>
 </div>
 <div class="each_img" style="margin-top:200px; margin-left: 100px;">

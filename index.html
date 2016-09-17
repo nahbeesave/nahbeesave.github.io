@@ -44,7 +44,7 @@
         flex-direction: column;
         font-family: Tahoma, Verdana, Segoe, sans-serif;
         font-size: 12px;
-        height: 100vh;
+        height: 10vh;
         -webkit-justify-content: center;
         justify-content: center;
         letter-spacing: 1.5px;
@@ -66,7 +66,7 @@
     }
 </style>
 
-<div>
+<div style="height: 100vh;">
     <svg viewBox="0 0 62.2 96.8">
         <path d="M31.1,88.8L31.1,88.8c-11.3,0-20.6-9.3-20.6-20.6V28.6C10.5,17.3,19.8,8,31.1,8h0c11.3,0,20.6,9.3,20.6,20.6v39.5C51.8,79.5,42.5,88.8,31.1,88.8z"/>
         <path d="M31.1,39.2L31.1,39.2c-1.7,0-3-1.4-3-3V23.8c0-1.7,1.4-3,3-3h0c1.7,0,3,1.4,3,3v12.3C34.2,37.8,32.8,39.2,31.1,39.2z">
@@ -75,31 +75,31 @@
     </svg>
     <span>Scroll down</span>
 </div>
-<div style="margin-top:100px; margin-left: 100px; z-index:1000;">
+<div class="each_img" style="margin-top:200px; margin-left: 100px;">
 <img src="img/agreed_sample.png" style="width:200px;" />
 </div>
-<div style="margin-top:100px; margin-left: -250px; z-index:1400;">
+<div class="each_img" style="margin-top:100px; margin-left: -250px;">
 <img src="img/mina.png" style="width:200px;" />
 </div>
-<div style="margin-top:100px; margin-left: 200px; z-index:1800;">
+<div class="each_img" style="margin-top:100px; margin-left: 200px;">
 <img src="img/dongsi.png" style="width:300px;" />
 </div>
-<div style="margin-top:100px; margin-left: -200px; z-index:2200;">
+<div style="margin-top:100px; margin-left: -200px;">
 <img src="img/yeji.png" style="width:400px;" />
 </div>
-<div style="margin-top:100px; margin-left: 100px; z-index:2600;">
+<div style="margin-top:100px; margin-left: 100px;">
 <img src="img/boobs.png" style="width:400px;" />
 </div>
-<div style="margin-top:100px; margin-left: -250px; z-index:3000;">
+<div style="margin-top:100px; margin-left: -250px;">
 <img src="img/jooyoung.png" style="width:200px;" />
 </div>
-<div style="margin-top:100px; margin-left: 200px; z-index:3400;">
+<div style="margin-top:100px; margin-left: 200px;">
 <img src="img/cham-project.png" style="width:300px;" />
 </div>
-<div style="margin-top:100px; margin-left: -200px; z-index:3800;">
+<div style="margin-top:100px; margin-left: -200px;">
 <img src="img/glass.png" style="width:400px;" />
 </div>
-<div style="margin-top:100px; z-index:2600;">
+<div style="margin-top:100px;">
 <img src="img/eunbi.png" style="width:30%;" />
 </div>
 <script>
@@ -140,6 +140,21 @@
     window.addEventListener('scroll', scrollReset);
     window.addEventListener('resize', scrollReset);
 
+</script>
+
+<script type="text/javascript">
+    var list = document.getElementsByClassName("each_img")[i];
+    list.getElementsByClassName("child")[0].innerHTML = "Milk";
+
+
+    for (var i = 0; i < doc.childNodes.length; i++) {
+        var list = document.getElementsByClassName("each_img")[i];
+        list.style.zIndex = 1000 + (300*i);
+        if (doc.childNodes[i].className == "4") {
+          notes = doc.childNodes[i];
+          break;
+        }        
+    }
 </script>
 </body>
 </html>

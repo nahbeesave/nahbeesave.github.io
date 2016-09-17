@@ -7,6 +7,8 @@
 </head>
 <body>
 
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
 <script src="three.js/build/three.js"></script>
 
 <script src="aquarelle/Aquarelle.js"></script>
@@ -19,6 +21,8 @@
 <script src="three.js/examples/js/shaders/CopyShader.js"></script>
 
 <script src="https://bl.ocks.org/mbostock/raw/4241134/d3.geom.contour.min.js"></script>
+
+
 
 <style>
 
@@ -144,7 +148,8 @@
 <img src="img/mina.png" style="width:200px;" class="img_class" />
 </div>
 <div class="each_img" style="margin-left: 200px;">
-<img src="img/dongsi.png" style="width:300px;" class="img_class" />
+<img src="img/dongsi.png" style="width:300px;" class="img_class" onmouseover="this.src='img/dongsi-txt.png';" onmouseout="this.src='img/dongsi.png';"/>
+<!--<img src='LibraryTransparent.png' width='120' height='70' onmouseover="this.src='LibraryHoverTrans.png';" onmouseout="this.src='LibraryTransparent.png';" />-->
 </div>
 <div class="each_img" style="margin-left: -200px;">
 <img src="img/yeji.png" style="width:400px;" class="img_class" />
@@ -165,8 +170,18 @@
 <img src="img/eunbi.png" style="width:200px;" class="img_class" />
 </div>
 <div>
-<img src="img/goodie_logo.png" style="width:60%; margin-top:230px; margin-bottom:230px;" />
+<img src="img/goodie_logo.png" style="width:60%; margin-top:230px; margin-bottom:20px;" />
+<span style="font-size:10vmin; margin-bottom:200px; ">
+
+<i class="fa fa-map-marker" aria-hidden="true" style="margin-right:20px; margin-left:20px; font-size:10vmin;"></i>
+<i class="fa fa-calendar" aria-hidden="true" style="margin-right:20px; margin-left:20px;"></i>
+<i class="fa fa-facebook" aria-hidden="true" style="margin-right:20px; margin-left:20px; font-size:10vmin;"></i>
+</span>
+
 </div>
+
+
+
 <script>
 
     var text = document.getElementsByTagName('div')[0];

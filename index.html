@@ -155,10 +155,10 @@
     if (mq.matches) {
         for (var i = 0; i < 9; i++) {
             var list = document.getElementsByClassName("each_img")[i];
-            var mLeftArr = ["50px","-100px","70px"];
-            list.style.marginLeft = mLeftArr[i%3]; 
+            var mLeftArr = ["70px","-100px","50px","-90px"];
+            list.style.marginLeft = mLeftArr[i%2]; 
             var img_list = document.getElementsByClassName("img_class")[i];
-            img_list.style.width = "120px"; 
+            img_list.style.width = "175px"; 
         }
     }
 

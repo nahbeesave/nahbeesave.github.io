@@ -169,12 +169,15 @@
 <img src="img/eunbi.png" style="width:200px;" class="img_class" onmouseover="this.src='img/eunbi-txt.png';" onmouseout="this.src='img/eunbi.png';" />
 </div>
 <div>
-<img src="img/goodie_logo.png" style="width:60%; margin-top:230px; margin-bottom:20px;" />
+<img src="img/goodie_logo.png" style="width:300px; margin-top:230px; margin-bottom:20px;" id="catPic"/>
 <span style="font-size:10vmin; margin-bottom:200px; ">
 
-<i class="fa fa-map-marker" aria-hidden="true" style="margin-right:20px; margin-left:20px; font-size:10vmin;"></i>
-<i class="fa fa-calendar" aria-hidden="true" style="margin-right:20px; margin-left:20px;"></i>
-<i class="fa fa-facebook" aria-hidden="true" style="margin-right:20px; margin-left:20px; font-size:10vmin;"></i>
+<i class="fa fa-map-marker" aria-hidden="true" style="margin-right:20px; margin-left:20px; font-size:10vmin;" onmouseover="mouseOverImage2()"
+                     onmouseout="mouseOutImage()"></i>
+<i class="fa fa-calendar" aria-hidden="true" style="margin-right:20px; margin-left:20px;" onmouseover="mouseOverImage3()"
+                     onmouseout="mouseOutImage()"></i>
+<a href ="https://www.facebook.com/cre8s/" style="color: inherit;
+    text-decoration: none;"><i class="fa fa-facebook" aria-hidden="true" style="margin-right:20px; margin-left:20px; font-size:10vmin;" ></i></a>
 </span>
 
 </div>
@@ -261,5 +264,53 @@
     });
 
 </script>
+
+<script type="text/javascript">
+    var originalImage = {};
+    
+    function getCatPic(){
+        return document.getElementById("catPic");
+    }
+
+    function pushImage(obj) {
+       if (originalImage.src === undefined) {
+           originalImage.src = obj.src;
+           originalImage.width = obj.style.width;
+           originalImage.height = obj.style.height;
+       }
+    }
+
+    function popImage(obj) {
+       obj.src = originalImage.src;
+       obj.style.width = originalImage.width;
+       obj.style.height = originalImage.height;
+    }
+
+    function mouseOverImage2() {
+       var catPic = getCatPic();
+       pushImage(catPic);
+       
+       // Hack away at image here ...
+       catPic.src='img/place.png'; 
+       catPic.style.width='300px'; 
+       catPic.style.height='300px';
+    }
+
+    function mouseOverImage3() {
+        var catPic = getCatPic();
+        pushImage(catPic);
+
+        // Hack away at image here ...
+        catPic.src='img/time.png'; 
+        catPic.style.width='300px'; 
+        catPic.style.height='300px';
+    }
+    function mouseOutImage() {
+       var catPic = getCatPic();
+       // ... Restore Image here
+       popImage(catPic);
+    }
+</script>
+
 </body>
 </html>
